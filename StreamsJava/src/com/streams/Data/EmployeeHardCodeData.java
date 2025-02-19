@@ -12,6 +12,8 @@ public class EmployeeHardCodeData {
 		finaEmployees.add(new Employee(3, "Venkat", 30, 2800000L, 8));
 		finaEmployees.add(new Employee(4, "Heman", 34, 3800000L, 12));
 		finaEmployees.add(new Employee(5, "Sai", 27, 1500000L, 5));
+		finaEmployees.add(new Employee(5, "Sai", 27, 1500000L, 5));
+		finaEmployees.add(new Employee(6, "Ram", 27, 1500000L, 5));
 
 		return finaEmployees;
 	}
