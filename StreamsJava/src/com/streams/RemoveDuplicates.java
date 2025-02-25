@@ -3,6 +3,7 @@ package com.streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import com.streams.Data.Employee;
@@ -16,8 +17,11 @@ public class RemoveDuplicates {
 		System.out.println("Disticnt Elements are: " + removeDuplicate);
 
 		List<Employee> emp = EmployeeHardCodeData.getEmployeeDetails();
-		emp = emp.stream().distinct().toList();
-		System.out.println("Distinct Employee Objects are: " + emp);
+		List<Employee> emp0 = emp.stream().distinct().toList();
+		System.out.println("Distinct Employee Objects are: " + emp0);
+
+		Set<Employee> emp1 = emp.stream().collect(Collectors.toSet());
+		System.out.println("Distinct Employee Objects are for set: " + emp1);
 
 		// ADVANCE DISTINCT.!
 		Map<Integer, Long> map = emp.stream().collect(Collectors.groupingBy(Employee::getAge, Collectors.counting()));
