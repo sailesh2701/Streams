@@ -3,6 +3,8 @@ package com.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class CountStringStartingWithChar {
@@ -17,6 +19,15 @@ public class CountStringStartingWithChar {
 				.collect(Collectors.groupingBy(s -> (s.contains("s") || s.contains("S")), Collectors.counting())));
 
 		System.out.println(getList.stream().flatMapToInt(String::chars).filter(s -> s == 's').count());
+
+		Map<Character, Long> frequencyMap = "Saileshasassahhaaiilleess".chars().mapToObj(c -> (char) c)
+				.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+		/**
+		 * Function.identity() is a static method in the Function<T, T> interface (from
+		 * java.util.function). It returns the input as output without any
+		 * transformation.
+		 **/
+		System.out.println(frequencyMap);
 
 	}
 
