@@ -1,4 +1,4 @@
-package com.streams;
+package com.dataStructures;
 
 import java.util.ArrayList;
 import java.util.List;
